@@ -1,0 +1,62 @@
+service:
+  name: nametag-example
+
+
+plugins:
+  localPath: ../../
+  modules:
+    - serverless-plugin-nametag
+
+
+package:
+  include:
+    - "handler.js"
+
+
+custom:
+  nametag:
+    tag: true
+
+
+provider:
+  name: aws
+  stage: ${opt:stage, "dev"}
+  region: ${opt:region, "us-east-1"}
+  logRetentionInDays: 30
+  runtime: python3.6
+
+  tags:
+    MyTag: IsCool
+    AnotherTag: there
+
+  environment:
+
+
+functions:
+  ExampleOne:
+    description: 'Tags will be { "Name": "nametag-example-dev-ExampleOneLambdaFunction", "MyTag": "IsCool" }'
+    handler: handler.foo
+  ExampleTwo:
+    description: 'Tags will be { "CustomName": "nametag-example-dev-ExampleTwoLambdaFunction", "MyTag": "IsCool" }'
+    handler: handler.foo
+    nametag:
+      tagName: CustomName
+  ExampleThree:
+    description: 'Tags { "MyTag": "IsCool" }'
+    handler: handler.foo
+    nametag:
+      tag: false
+      tagName: DoesNotMatter
+  ExampleFour:
+    description: >-
+      Tags will be { "Name": "nametag-example-dev-ExampleFourLambdaFunction", "AnotherTag": "here", "MyTag": "IsCool" }
+    handler: handler.foo
+    tags:
+      AnotherTag: here
+  ExampleFive:
+    description: 'Tags will be { "AnotherTag": "here", "MyTag": "IsCool" }'
+    handler: handler.foo
+    nametag:
+      tag: false
+    tags:
+      AnotherTag: here
