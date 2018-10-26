@@ -14,7 +14,7 @@
     "lambda",
     "tags"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Serverless framework plugin for applying a standard identification tag to AWS Lambda functions",
   "author": "Tyler Hendrickson <hendrickson.tsh@gmail.com>",
   "license": "MIT",
