@@ -8,6 +8,11 @@ A Serverless framework plugin for tagging AWS Lambda functions with the logical 
 ## Usage
 
 
+### Installation
+
+[Install via NPM](https://npmjs.com/package/serverless-plugin-nametag)
+
+
 ### A Basic Example
 
 The following Serverless configuration will apply a `Name` tag to the `MyFunction` Lambda function 
