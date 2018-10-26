@@ -1,0 +1,43 @@
+{
+  "name": "serverless-plugin-nametag",
+  "homepage": "https://github.com/washingtonpost/serverless-plugin-nametag#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/washingtonpost/serverless-plugin-nametag.git"
+  },
+  "bugs": {
+    "url": "https://github.com/washingtonpost/serverless-plugin-nametag/issues"
+  },
+  "keywords": [
+    "serverless",
+    "aws",
+    "lambda",
+    "tags"
+  ],
+  "version": "1.0.0",
+  "description": "Serverless framework plugin for applying a standard identification tag to AWS Lambda functions",
+  "author": "Tyler Hendrickson <hendrickson.tsh@gmail.com>",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node tests/test.*.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "expect": "^23.6.0"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "tests",
+    "example": "example"
+  },
+  "files": [
+    "src/index.js",
+    "tests/test.index.js",
+    "package.json",
+    "README.md"
+  ]
+}
